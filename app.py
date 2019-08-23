@@ -2,12 +2,17 @@
 
 import os
 from flask import Flask, render_template
+
+import backend.config
+
+
 app = Flask(__name__)
 
 
-@app.route("/")
-def index():
-    return render_template('index.html')
+@app.route("/", defaults={'path': ''})
+@app.route("/<path:path>")
+def index(path):
+    return render_template('index.html', config=backend.config)
 
 
 if __name__ == "__main__":
