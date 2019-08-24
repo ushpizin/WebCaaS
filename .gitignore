@@ -306,5 +306,4 @@ tags
 .history
 
 # End of https://www.gitignore.io/api/vim,node,flask,python,visualstudiocode
-
-static/bundle.js
+*.auto.*

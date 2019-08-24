@@ -5,8 +5,8 @@ import json
 import httplib
 from flask import Flask, render_template, request, abort
 
-import backend.config
-from backend.docker_wrapper import DockerWrapper
+import webcaas.config
+from webcaas.docker_wrapper import DockerWrapper
 
 
 app = Flask(__name__)
@@ -48,7 +48,7 @@ def invalid_rest_api(path):
 @app.route("/", defaults={'path': ''})
 @app.route("/<path:path>")
 def index(path):
-    return render_template('index.html', config=backend.config)
+    return render_template('index.html', config=webcaas.config)
 
 
 if __name__ == "__main__":
