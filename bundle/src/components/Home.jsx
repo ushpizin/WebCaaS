@@ -1,9 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
-import { Typography, Box, Container } from '@material-ui/core';
+import { Typography, Container } from '@material-ui/core';
 
+import ActiveContainersTable from './ActiveContainersTable';
 import NewContainerForm from './NewContainerForm';
-import ActiveContainer from './ActiveContainer';
 
 const useStyle = makeStyles((theme) => ({
   content: {
@@ -27,18 +27,7 @@ const Home = () => {
                     Active Containers
         </Typography>
 
-        <Box display="flex" flexWrap="wrap">
-          <ActiveContainer />
-          <ActiveContainer />
-          <ActiveContainer />
-          <ActiveContainer />
-          <ActiveContainer />
-          <ActiveContainer />
-          <ActiveContainer />
-          <ActiveContainer />
-          <ActiveContainer />
-          <ActiveContainer />
-        </Box>
+        <ActiveContainersTable />
       </Container>
     </>
   );
