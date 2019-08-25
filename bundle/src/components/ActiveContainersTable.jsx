@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core';
 
 import { ActiveContainer, ActiveContainerSkeleton } from './ActiveContainer';
 
@@ -35,9 +35,13 @@ class ActiveContainerTable extends React.Component {
       </>
     );
     if (isLoaded) {
-      containersComponents = containersInfo.map((c) => (
-        <ActiveContainer key={c.id} container={c} />
-      ));
+      if (containersInfo.length === 0) {
+        containersComponents = (<Typography variant="overline">No active containers</Typography>);
+      } else {
+        containersComponents = containersInfo.map((c) => (
+          <ActiveContainer key={c.id} container={c} />
+        ));
+      }
     }
 
     return (
